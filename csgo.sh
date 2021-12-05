@@ -3,6 +3,8 @@
 #
 # Server Files: /mnt/server
 # Image to install with is 'ubuntu:18.04'
+apt-get update
+apt install software-properties-common
 add-apt-repository multiverse -y
 dpkg --add-architecture i386 -y
 apt-get update
