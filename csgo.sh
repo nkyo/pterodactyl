@@ -51,6 +51,6 @@ mkdir -p /mnt/server/.steam/sdk64
 cp -v linux64/steamclient.so ../.steam/sdk64/steamclient.so
 
 cd /mnt/server/csgo/
-wget https://github.com/nkyo/pterodactyl/releases/download/latest/nkCSGO.tar
-tar -xvf nkCSGO.tar
-rm -f nkCSGO.tar
+wget https://github.com/nkyo/pterodactyl/releases/download/latest/nkCSGO.tar &>/dev/null
+tar -xvf nkCSGO.tar &>/dev/null
+rm -f nkCSGO.tar &>/dev/null
