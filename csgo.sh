@@ -4,7 +4,8 @@
 # Server Files: /mnt/server
 # Image to install with is 'ubuntu:18.04'
 apt -y update
-apt -y --no-install-recommends install curl lib32gcc1 ca-certificates
+apt -y --no-install-recommends install curl lib32gcc1 ca-certificates apt-get install lib32gcc1 lib32stdc++6
+
 
 ## just in case someone removed the defaults.
 if [ "${STEAM_USER}" == "" ]; then
