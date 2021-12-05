@@ -3,15 +3,17 @@
 #
 # Server Files: /mnt/server
 # Image to install with is 'ubuntu:18.04'
-apt-get update
-apt install software-properties-common -y
-add-apt-repository multiverse -y
-dpkg --add-architecture i386
-apt-get update
-apt-get install libgcc1 lib32gcc1 lib32stdc++6
-apt -y update
-apt -y --no-install-recommends install curl lib32gcc1 ca-certificates
+apt-get update &>/dev/null
+apt install software-properties-common -y &>/dev/null
+add-apt-repository multiverse -y &>/dev/null
+dpkg --add-architecture i386 
+apt-get update &>/dev/null
+apt-get install libgcc1 lib32gcc1 lib32stdc++6 &>/dev/null
+apt -y update &>/dev/null
+apt -y --no-install-recommends install curl lib32gcc1 ca-certificates &>/dev/null
+clear
 
+echo "Setting steamcmd"
 
 ## just in case someone removed the defaults.
 if [ "${STEAM_USER}" == "" ]; then
@@ -32,9 +34,13 @@ cd /mnt/server/steamcmd
 # This is changed at the end of the install process anyways.
 chown -R root:root /mnt
 export HOME=/mnt/server
+clear
+echo "Setting CSGO Server, please wait 15-20 minutes..."
 
 ## install game using steamcmd
-./steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} +force_install_dir /mnt/server +app_update ${SRCDS_APPID} ${EXTRA_FLAGS} +quit ## other flags may be needed depending on install. looking at you cs 1.6
+./steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} +force_install_dir /mnt/server +app_update ${SRCDS_APPID} ${EXTRA_FLAGS} +quit &>/dev/null
+
+echo "Installing plugin..."
 
 ## set up 32 bit libraries
 mkdir -p /mnt/server/.steam/sdk32
