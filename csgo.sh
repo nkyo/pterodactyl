@@ -54,7 +54,3 @@ cd /mnt/server/csgo/
 wget https://github.com/nkyo/pterodactyl/releases/download/latest/nkCSGO.tar
 tar -xvf nkCSGO.tar
 rm -f nkCSGO.tar
-sed -i '/\"FollowCSGOServerGuidelines\"/d' addons/sourcemod/configs/core.cfg
-sed -i '/\}/d' addons/sourcemod/configs/core.cfg
-echo "\"FollowCSGOServerGuidelines\" \"no\"" >> addons/sourcemod/configs/core.cfg
-echo "}" >> addons/sourcemod/configs/core.cfg
