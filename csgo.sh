@@ -4,14 +4,14 @@
 # Server Files: /mnt/server
 # Image to install with is 'ubuntu:18.04'
 apt-get update
-apt install software-properties-common
+apt install software-properties-common -y
 add-apt-repository multiverse -y
-dpkg --add-architecture i386 -y
+dpkg --add-architecture i386
 apt-get update
-apt-get install lib32gcc1 lib32stdc++6
+apt-get install libgcc1 lib32gcc1 lib32stdc++6
 apt -y update
 apt -y --no-install-recommends install curl lib32gcc1 ca-certificates
-sleep 10
+
 
 ## just in case someone removed the defaults.
 if [ "${STEAM_USER}" == "" ]; then
