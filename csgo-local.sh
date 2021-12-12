@@ -35,14 +35,15 @@ cd /mnt/server/steamcmd
 chown -R root:root /mnt
 export HOME=/mnt/server
 clear
-echo "Setting CSGO Server, please wait 15-20 minutes..."
+echo "Đang cài đặt CSGO Server, vui lòng chờ 3-5 phút..."
 
 ## install game using steamcmd
 #./steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} +force_install_dir /mnt/server +app_update ${SRCDS_APPID} ${EXTRA_FLAGS} +quit &>/dev/null
 
-wget http://172.17.0.1/csgo.tar
-tar -xvf csgo.tar -C /mnt/server/
-echo "Installing plugin..."
+wget http://172.17.0.1/csgo.tar &>/dev/null
+tar -xvf csgo.tar -C /mnt/server/ &>/dev/null
+rm -f csgo.tar
+echo "Đang cài đặt plugins SourceMod/MetaMod.."
 
 ## set up 32 bit libraries
 mkdir -p /mnt/server/.steam/sdk32
