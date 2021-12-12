@@ -35,7 +35,7 @@ cd /mnt/server/steamcmd
 chown -R root:root /mnt
 export HOME=/mnt/server
 clear
-echo "Đang cài đặt CSGO Server, vui lòng chờ 3-5 phút..."
+echo "Đang cài đặt CSGO Server, vui lòng chờ 3-5 phút để hệ thống hoàn tất thiết lập..."
 
 ## install game using steamcmd
 #./steamcmd.sh +login ${STEAM_USER} ${STEAM_PASS} ${STEAM_AUTH} +force_install_dir /mnt/server +app_update ${SRCDS_APPID} ${EXTRA_FLAGS} +quit &>/dev/null
